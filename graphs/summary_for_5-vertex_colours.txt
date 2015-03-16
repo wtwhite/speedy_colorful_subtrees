@@ -1,0 +1,19 @@
+  3 5-vertex_colours\pos44247C20H48N6O8P2S.txt
+  4 5-vertex_colours\pos44247C17H45N11O6PS2.txt
+  5 5-vertex_colours\pos44247C25H41N9O4PS.txt
+  6 5-vertex_colours\pos44247C21H42N10O6S2.txt
+  6 5-vertex_colours\pos44247C22H40N7O12.txt
+  6 5-vertex_colours\pos44247C22H43N8O7PS.txt
+  7 5-vertex_colours\pos44247C19H47N8O7PS2.txt
+  8 5-vertex_colours\pos44247C24H45N5O8PS.txt
+  8 5-vertex_colours\pos44247C25H49N5O3PS3.txt
+  9 5-vertex_colours\pos44247C26H42N7O5P2.txt
+  9 5-vertex_colours\pos44247C27H43N6O5PS.txt
+ 13 5-vertex_colours\pos44247C24H47N5O6P3.txt
+ 14 5-vertex_colours\pos44247C16H41N11O11P.txt
+ 16 5-vertex_colours\pos44247C18H43N8O12P.txt
+ 16 5-vertex_colours\pos44247C23H44N7O7S2.txt
+ 18 5-vertex_colours\pos44247C22H50N3O9P2S.txt
+ 19 5-vertex_colours\pos44247C22H48N3O11S2.txt
+ 22 5-vertex_colours\pos44247C20H45N5O13P.txt
+189 total

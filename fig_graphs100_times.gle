@@ -1,0 +1,52 @@
+!papersize 8.5 12
+!margins 0 0 0 0
+size 8.5 8.5			! OUP Bioinformatics single-column images are 86mm wide
+!size 12.5 12			! OUP Bioinformatics single-column images are 86mm wide
+!scale auto
+
+begin graph
+	scale auto
+	!center
+	!title "Running time comparison for graphs100 dataset"
+	xtitle "Solver"
+	ytitle "Running time (s)"
+	!data "summarise_graphs100.csv"
+	data "fig_graphs100_times.csv"
+	!bar d2 fill gray10
+	!! GLE needs the *absolute* height, not the extra height to add to the previous level...
+	!!bar d1 from d2 fill black
+	!bar d3 from d2 fill white
+	!bar d1,d3,d5,d7 fill gray10,gray30,gray50,gray70
+	!bar d1,d3,d5,d7 fill yellow,blue,red,black
+	bar d1,d3,d5,d7 fill beige,goldenrod,steelblue,darkolivegreen
+	!bar d2,d4,d6,d8 from d1,d3,d5,d7 fill white,white,white,white
+	bar d2,d4,d6,d8 from d1,d3,d5,d7 fill black,black,black,black
+	xticks length -0.2
+	!xnoticks 3 4		!DEBUG
+	! xplaces seems to force in the specified x positions' labels, and make them always use "big" ticks (instead of sometimes using subticks).  Is there any way to force in all positions without listing them all?!?
+	!xplaces 3 4 6		!DEBUG
+	xaxis ftick 1 dticks 1 nticks ndata(d1)		! Without this, it only prints every second label...
+	xaxis min 1-0.5 max ndata(d1)+0.5
+	xsubticks off
+	x2ticks off
+	key off		! Because we're gonna make one manually.
+end graph
+
+begin key
+	position tl
+	!text "Reduce instances" fill white
+	text "Reduce instances" fill black
+	!text "Solve original instances" fill gray10
+	!text "Solve original instances" fill yellow
+	text "Solve original instances" fill beige
+	! "R1" = ".reduced3", "R2" = ".reduced4", "R3" = ".reduced6".
+	!text "Solve R1 instances" fill gray30
+	!text "Solve R2 instances" fill gray50
+	!text "Solve R3 instances" fill gray70
+	!text "Solve R1 instances" fill blue
+	!text "Solve R2 instances" fill red
+	!text "Solve R3 instances" fill black
+	text "Solve R1 instances" fill goldenrod
+	text "Solve R2 instances" fill steelblue
+	text "Solve R3 instances" fill darkolivegreen
+end key

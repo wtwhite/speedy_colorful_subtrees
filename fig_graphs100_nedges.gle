@@ -1,0 +1,56 @@
+size 8.5 8.5			! OUP Bioinformatics single-column images are 86mm wide
+
+begin graph
+	scale auto
+	!title "Reduced problem sizes for graphs100 dataset"
+	xtitle ""		! Nothing meaningful on the x axis!
+	ytitle "# edges/1000"
+	data "fig_graphs100_nedges.csv"
+	!let dn = dn/1000	!HACK: Just to make the left margin smaller!
+	let d1 = d1/1000	!HACK: Just to make the left margin smaller!
+	let d2 = d2/1000	!HACK: Just to make the left margin smaller!
+	let d3 = d3/1000	!HACK: Just to make the left margin smaller!
+	let d4 = d4/1000	!HACK: Just to make the left margin smaller!
+	!set lwidth 0		! Apparently this actually sets it to 0.02 :(
+	set lwidth 0.00001		!HACK
+	!dn lstyle 1 color clear
+	! GLE needs the *absolute* height, not the extra height to add to the previous level...
+	! "color clear" gives no error message, but leaves ordinary black lines there...  while "color red" makes red lines.  Ugh.
+	!bar d4 fill gray70 color clear
+	!bar d4 fill gray70 width 1
+	!bar d3 from d4 fill gray50 width 1
+	!bar d2 from d3 fill gray30 width 1
+	!bar d1 from d2 fill gray10 width 1
+	!bar d4 fill black width 1
+	!bar d3 from d4 fill red width 1
+	!bar d2 from d3 fill blue width 1
+	!bar d1 from d2 fill yellow width 1
+	bar d4 fill darkolivegreen width 1
+	bar d3 from d4 fill steelblue width 1
+	bar d2 from d3 fill goldenrod width 1
+	bar d1 from d2 fill beige width 1
+	!xticks length -0.2
+	xticks off
+	!xnoticks 3 4		!DEBUG
+	! xplaces seems to force in the specified x positions' labels, and make them always use "big" ticks (instead of sometimes using subticks).  Is there any way to force in all positions without listing them all?!?
+	!xplaces 3 4 6		!DEBUG
+	!xaxis ftick 1 dticks 1 nticks ndata(d1)		! Without this, it only prints every second label...
+	xlabels off
+	xaxis min 1-0.5 max ndata(d1)+0.5
+	xsubticks off
+	x2ticks off
+	y2ticks off
+	y2subticks off
+	!key off		! Because we're gonna make one manually.
+	key pos tl
+end graph
+
+!begin key
+!	position tl
+!	text "Reduce instances" fill white
+!	text "Solve original instances" fill gray10
+!	! "R1" = ".reduced3", "R2" = ".reduced4", "R3" = ".reduced6".
+!	text "Solve R1 instances" fill gray30
+!	text "Solve R2 instances" fill gray50
+!	text "Solve R3 instances" fill gray70
+!end key

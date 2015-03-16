@@ -1,0 +1,6 @@
+partitioner
+convert-individual
+delnode
+solve_*
+Makefile.config
+*.o

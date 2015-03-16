@@ -1,0 +1,29 @@
+# Configuration for INCLUDE/LIB paths
+#  (copy to Makefile.config first!)
+
+# it should be sufficient to set OGDF_BASE appropriately
+OGDF_BASE = /home/someone/path/to/OGDF
+OGDF_INCLUDE_DIR         = $(OGDF_BASE)/include
+OGDF_LIBRARY_DIR_DEBUG   = $(OGDF_BASE)/_debug
+OGDF_LIBRARY_DIR_RELEASE = $(OGDF_BASE)/_release
+
+# for a standard CPLEX installation, it should be sufficient to
+# replace XXX (like 1251) and SYSTEM (like x86-64_sles10_4.1)
+CPLEX_BASE = /opt/ibm/ILOG/CPLEX_StudioXXX
+CPLEX_INCLUDE_DIR   = $(CPLEX_BASE)/cplex/include
+CPLEX_LIBRARY_DIR   = $(CPLEX_BASE)/cplex/lib/SYSTEM/static_pic
+CONCERT_INCLUDE_DIR = $(CPLEX_BASE)/concert/include
+CONCERT_LIBRARY_DIR = $(CPLEX_BASE)/concert/lib/SYSTEM/static_pic
+
+# for a standard GUROBI installation, it should be sufficient to
+# replace XYZ (like 560), XY (like 56) and SYSTEM (like linux64)
+GUROBI_BASE = /opt/gurobiXYZ/SYSTEM/
+GUROBI_VERSION = XY
+GUROBI_INCLUDE_DIR = $(GUROBI_BASE)/include
+GUROBI_LIBRARY_DIR = $(GUROBI_BASE)/lib
+
+# You can set DEBUG default here or overwrite using "make DEBUG=1 ..."
+DEBUG=0
+# 0 = no debugging (release mode)
+# 1 = debug mode
+# 2 = GNU profiler (release mode)
